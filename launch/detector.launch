@@ -3,7 +3,7 @@
     <!-- Camera topic and weights, config and classes files -->
     <arg name="image_topic"	                default="/cv_camera_node/image_rect_color"/>
     <arg name="frame_id"               		default="camera_link"/>
-    <arg name="weights_name"	            default="chess_v2.pt"/>
+    <arg name="weights_name"	            default="chess_v3.pt"/>
 
     <!-- Published topics -->
     <arg name="publish_image"	            default="true"/>

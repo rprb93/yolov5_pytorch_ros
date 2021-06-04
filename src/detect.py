@@ -169,11 +169,11 @@ class Detector:
 
 				# Populate darknet message
 				detection_msg = BoundingBox()
-				detection_msg.xmin = xmin_unpad
-				detection_msg.xmax = xmax_unpad
-				detection_msg.ymin = ymin_unpad
-				detection_msg.ymax = ymax_unpad
-				detection_msg.probability = conf
+				detection_msg.xmin = int(xmin_unpad)
+				detection_msg.xmax = int(xmax_unpad)
+				detection_msg.ymin = int(ymin_unpad)
+				detection_msg.ymax = int(ymax_unpad)
+				detection_msg.probability = float(conf)
 				detection_msg.Class = self.names[int(det_class)]
 
 				# Append in overall detection message
