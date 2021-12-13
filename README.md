@@ -5,9 +5,8 @@ This package provides a ROS wrapper for YOLOv5 based on [PyTorch-YOLOv5](v).
 **Adapted by**: Raghava Uppuluri
 
 ## Prerequisites
-1. Have a conda environmeent
-2. Have ROS installed
-If you haven't done any of those: see [this tutorial](https://wiki.purduearc.com/wiki/tutorials/setup-ros) to do both.
+1. Have conda installed
+2. Have ROS installed + setup
 
 ## Quick Start
 
