@@ -18,7 +18,7 @@ conda install -f requirements.txt
 ```
 
 ## Installation
-Clone the repo into your `src` folder of your `catkinn_ws`. 
+Clone the repo into your `src` folder of your `catkin_ws`. 
 ```
 git clone https://github.com/raghavauppuluri13/yolov5_pytorch_ros.git
 ```
