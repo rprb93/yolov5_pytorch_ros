@@ -1,5 +1,5 @@
 # yolov5_pytorch_ros
-This package provides a ROS wrapper for YOLOv5 based on [PyTorch-YOLOv5](v). The package has NOT been tested yet.
+This package provides a ROS wrapper for YOLOv5 based on [PyTorch-YOLOv5](v).
 
 **Authors**: Vasileios Vasilopoulos (<vvasilo@seas.upenn.edu>), Georgios Pavlakos (<pavlakos@seas.upenn.edu>)
 **Adapted by**: Raghava Uppuluri
