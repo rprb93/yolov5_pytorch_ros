@@ -46,6 +46,10 @@ class Detector:
         self.weights_path = rospy.get_param('~weights_path')
         rospy.loginfo("Found weights, loading %s", self.weights_path)
 
+        # Load frame parameter
+        self.frame_camera = rospy.get_param('~frame_id')
+        rospy.loginfo("Found frame, loading %s", self.frame_camera)
+
         # Raise error if it cannot find the model
         if not os.path.isfile(self.weights_path):
             raise IOError(('{:s} not found.').format(self.weights_path))
@@ -240,7 +244,7 @@ class Detector:
 
         # Publish visualization image
         image_msg = self.bridge.cv2_to_imgmsg(imgOut, "rgb8")
-        image_msg.header.frame_id = 'camera'
+        image_msg.header.frame_id = self.frame_camera
         image_msg.header.stamp = rospy.Time.now()
         self.pub_viz_.publish(image_msg)
 

@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
     <!-- Camera topic and weights, config and classes files -->
-    <arg name="image_topic"	                default="/cv_camera_node/image_rect_color"/>
-    <arg name="weights_path"	            default="$(find yolov5_pytorch_ros)/weights/chess.pt"/>
+    <arg name="image_topic"	                default="/drone1/camera/color/image_raw"/>
+    <arg name="frame_camera"	            default="drone1_camera_link"/>
+    <arg name="weights_path"	            default="$(find yolov5_pytorch_ros)/weights/yolov5s.pt"/>
 
     <!-- Published topics -->
     <arg name="publish_image"	            default="true"/>
-    <arg name="detected_objects_topic"      default="detected_objects_in_image"/>
-    <arg name="detections_image_topic"      default="detections_image_topic"/>
+    <arg name="detected_objects_topic"      default="/drone1/detected_objects_in_image"/>
+    <arg name="detections_image_topic"      default="/drone1/detections_image_topic"/>
 
     <!-- Detection confidence -->
-    <arg name="confidence"                  default="0.25"/>
+    <arg name="confidence"                  default="0.4"/>
 
     <!-- Node -->
     <node name="detector" pkg="yolov5_pytorch_ros" type="detect.py" output="screen" respawn="true">
         <param name="image_topic"               value="$(arg image_topic)"/>
-        <param name="frame_id"               		value="camera"/>
+        <param name="frame_id"                  value="$(arg frame_camera)"/>
         <param name="weights_path"              value="$(arg weights_path)"/>
         <param name="publish_image"             value="$(arg publish_image)"/>
         <param name="detected_objects_topic"    value="$(arg detected_objects_topic)"/>
